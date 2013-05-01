@@ -1,0 +1,74 @@
+// Form CSS
+
+fieldset {
+border: 1px solid $darkgreen;
+}
+
+textarea {
+	width: 400px;
+	max-width: 100%;
+	// Allow only vertical resizing of textareas.
+	resize:vertical;
+
+	@include mq(460px) {
+		// prevent overflow.
+		width: 96%;
+	}
+}
+
+.form {
+	margin: 0 0 1em;
+	clear: both;
+
+	div {
+		margin: 0 0 .5em;
+		position: relative;
+	}
+
+	label {
+		display: block;
+	}
+
+	// Unique mark for required fields.
+	.req:before {
+		content: "*";
+		color: red;
+	}
+
+	// Style our custom error message.
+	.error {
+		padding: 0 0 0 5px;
+		color: red;
+		font-size: 80%;
+	}
+}
+
+input:focus { background: #fff; }
+
+// Automatically make invalid fields noticable.
+input:invalid[value=""] { background: pink; }
+
+:-moz-placeholder {
+	color: #888;
+	font-style: italic;
+}
+
+::-webkit-input-placeholder {
+	color: #888;
+	font-style: italic;
+}
+
+.btn {
+	padding: .3em;
+	background: #ddd;
+	border-radius: .3em;
+
+	@include mq(500px) {
+		padding: .5em;
+		height: 46px;
+	}
+
+	&:hover {
+		background: #eee;
+	}
+}

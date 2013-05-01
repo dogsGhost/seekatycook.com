@@ -1,0 +1,142 @@
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 0 1em;
+  width: 96%;
+  max-width: 75em;
+  // Prevent webkit weirdness with transforms.
+  -webkit-transform: translateZ(0);
+
+
+  @include mq(500px) {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+// Allows for fixed-width sidebar and fluid main content.
+.sub-wrapper {
+  position: relative;
+}
+
+.section {
+  padding: 1em;
+  border-radius: .5em; 
+  box-shadow: 0 3px 2px rgba(0,0,0, 0.3); 
+
+  @include mq(500px) {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.image-left {
+  margin: 0 1em 1em 0;
+  float: left;
+}
+
+.image-right {
+  margin: 0 0 1em 1em;
+  float: right;
+}
+
+
+// Main header logo.
+.logo {
+  margin: 0 auto 1em;
+  padding: 1em 0 0;
+  max-width: 707px;
+  
+  a {
+    @include ir;
+    display: block;
+    height: 170px;
+    background: url(../img/skc-banner.png) no-repeat;
+    -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+
+    &:hover {
+          -ms-transform: rotate(-5deg);
+      -webkit-transform: rotate(-5deg); 
+              transform: rotate(-5deg);
+    }
+  }
+
+  @include mq(710px) {
+    a {
+      height: 117px;
+      background: url(../img/skc-banner--small.png) no-repeat center; 
+    }
+  }
+
+  @include mq(500px) {
+    margin: 1em auto;
+    padding: 1em;
+    width: 272px;
+    background: #fff;
+
+    a {
+      height: 224px;
+      background: url(../img/see-katy-cook-logo.jpg) no-repeat;
+
+      &:hover {
+            -ms-transform: none;
+        -webkit-transform: none; 
+                transform: none;        
+      }
+    }
+  }
+}
+
+
+// SIDEBAR
+
+.aside {
+  @include border-box;
+  @include clearfix;
+  width: 19em;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  background: #fff;
+
+  img {
+    margin: 0 0 1em;
+    display: block;
+  }
+
+  @include mq(840px) {
+    position: static;
+    width: 100%;
+    margin: 0 0 1em;
+
+    .heading {
+      font-size: 1.65em;
+    }
+
+    img {
+      float: left;
+      width: 192px;
+      margin: 0 1em 0 0;
+    }
+  }
+
+  @include mq(500px) {
+    margin: 1em 0;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+// FOOTER
+
+.footer {
+  padding: .5em;
+  color: #fff;
+  text-align: center;
+  background: $green;
+  border: 1px solid lighten($green, 20%);
+}

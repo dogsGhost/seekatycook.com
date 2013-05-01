@@ -1,0 +1,124 @@
+.main-content {
+  @include border-box;
+  position: relative;
+  margin: 0 0 1em 20em;
+  min-height: 350px;
+  background: $cream;
+  border-top-left-radius: 0;
+  // Prevent navigation's box-shadow from appearing on top of main-content.
+  z-index: 10;
+
+  @include mq(840px) {
+    margin: 0 0 1em;
+    min-height: 0;
+  }
+
+  @include mq(500px) {
+    margin: -1px 0 0 0;
+    border-top: 1px dashed darken($cream, 40%);
+  }
+
+  img {
+    padding: 2px;
+    border: 1px solid $darkgreen; 
+  }
+
+  a {
+    font-weight: bold;
+    color: darken($green, 20%);
+
+    &:hover {
+      color: $darkgreen;
+    }
+  }
+}
+
+// FLAVORS
+
+.sub-section {
+  @include clearfix;
+}
+
+.flavor-list--2, .flavor-list--3 {
+  border-left: $flavor-border;
+}
+
+@include mq(975px, 841px) {
+  .flavor-list--1 {
+    border: $flavor-border;
+    border-left: none;
+    border-top: none;
+  }
+  .flavor-list--2 {
+    border: none;
+    border-bottom: $flavor-border;
+  }
+
+  .flavor-list--3 {
+    border: none;
+    border-right: $flavor-border;
+  }
+}
+
+@include mq(640px, 461px) {
+  .flavor-list--1 {
+    border: $flavor-border;
+    border-left: none;
+    border-top: none;
+  }
+  .flavor-list--2 {
+    border: none;
+    border-bottom: $flavor-border;
+  }
+
+  .flavor-list--3 {
+    border: none;
+    border-right: $flavor-border;
+  }  
+}
+
+.flavor-list {
+  @include border-box;
+  padding: 1em;
+  width: 33%;
+  float: left;
+
+  img {
+    width: 256px;
+    margin: 0 0 .5em;
+  }
+
+  li {
+    margin: 0 0 .3em;
+  }
+
+  @include mq(975px, 841px) {
+    width: 50%;
+    min-height: 570px;
+  }
+
+  @include mq(640px, 461px) {
+    width: 50%;
+    min-height: 570px;
+  }
+
+  @include mq(460px) {
+    width: 100%;
+    float: none;
+    border: none;
+    border-top: $flavor-border;
+  }
+}
+
+// Contact page - resolves paragraph break by image.
+@include mq(500px) {
+  .contact .main-content img {
+    margin: 0 0 1em;
+    float: none;
+  }
+}
+
+// Keep pricing table from distorting.
+@include mq(1040px) {
+  .pricing { clear: both; }
+}

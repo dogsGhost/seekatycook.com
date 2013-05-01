@@ -1,0 +1,54 @@
+.nav--main {
+  margin-left: 20em;
+
+  @include mq(840px) {
+    margin: 0;
+  }
+
+  ul {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0 1px 0 0;
+    float: left;
+    font-size: 1.3em;
+    background-color: darken(desaturate($cream, 35%), 15%);
+    background-image: -webkit-linear-gradient(darken(desaturate($cream, 35%), 15%) 85%, darken(desaturate($cream, 55%), 30%));
+    background-image:         linear-gradient(darken(desaturate($cream, 35%), 15%) 85%, darken(desaturate($cream, 55%), 30%));
+    box-shadow: 2px 0 2px rgba(0,0,0, 0.3);
+    border-radius: .25em .25em 0 0;
+
+    @include mq(500px) {
+      margin: 0;
+      float: none;
+      border-radius: 0;
+      background-image: none;
+      box-shadow: none;
+      border-bottom: 1px solid darken($cream, 50%);
+
+      a {
+        height: 48px;
+        line-height: 48px;
+      }
+
+    }
+  }
+  
+  a {
+    padding: 0 .5em;
+    display: block;
+    line-height: 2em;
+    color: #222;
+  }
+
+  .current {
+    background: $cream;
+
+    @include mq(500px) {
+      font-weight: bold;
+    }
+  }
+}
