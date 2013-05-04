@@ -1,4 +1,4 @@
 See Katy Cook
 ================
 
-Website files for seekatycook.com. Font and image files omitted from this repo.
+Website files for [seekatycook.com](http://seekatycok/com/). Image files omitted from this repo.
