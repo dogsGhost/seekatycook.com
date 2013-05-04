@@ -6,7 +6,7 @@
   }
 
   ul {
-    @include clearfix;
+    @extend .clearfix;
     margin: 0;
     padding: 0;
   }

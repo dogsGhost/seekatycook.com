@@ -94,7 +94,7 @@
 
 .aside {
   @include border-box;
-  @include clearfix;
+  @extend .clearfix;
   width: 19em;
   position: absolute; 
   top: 0;

@@ -36,7 +36,7 @@
 // FLAVORS
 
 .sub-section {
-  @include clearfix;
+  @extend .clearfix;
 }
 
 .flavor-list--2, .flavor-list--3 {

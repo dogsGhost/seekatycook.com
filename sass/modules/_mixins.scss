@@ -1,18 +1,5 @@
 // Mixins
 
-// prevent parents with floating children from collapsing
-@mixin clearfix {
-  *zoom: 1;
-  &:before, &:after {
-    content: " ";
-    display: table;    
-  }
-  &:after {
-    clear: both;
-  }
-
-}
-
 // use border-box model
 @mixin border-box {
      -moz-box-sizing: border-box;    
@@ -52,4 +39,19 @@
   } @else {
     @media (min-width: $minValue) and (max-width: $maxValue) { @content; }
   }
+}
+
+// Silent Classes (used via @extend)
+
+// prevent parents with floating children from collapsing
+.clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;    
+  }
+  &:after {
+    clear: both;
+  }
+
 }
